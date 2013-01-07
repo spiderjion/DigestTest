@@ -15,14 +15,6 @@
  */
 @property (retain, nonatomic) IBOutlet UITextField *loginURLTextField;
 /*!
- @brief 设置用户名
- */
-@property (retain, nonatomic) IBOutlet UITextField *userNameTextField;
-/*!
- @brief 设置用户密码
- */
-@property (retain, nonatomic) IBOutlet UITextField *passWordTextField;
-/*!
  @brief 登陆用按钮
  */
 @property (retain, nonatomic) IBOutlet UIButton *loginButton;

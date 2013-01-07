@@ -23,7 +23,7 @@
 		A98823AF16981D2100D6E3D5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98823AE16981D2100D6E3D5 /* SystemConfiguration.framework */; };
 		A98823B116981D2800D6E3D5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98823B016981D2800D6E3D5 /* MobileCoreServices.framework */; };
 		A98823B316981D3400D6E3D5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A98823B216981D3400D6E3D5 /* libz.dylib */; };
-		A98823B8169824F900D6E3D5 /* BusinessLogicController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98823B7169824F900D6E3D5 /* BusinessLogicController.m */; };
+		A9C82886169A841E008F761A /* DLEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C82885169A841E008F761A /* DLEngine.m */; };
 		E4E981961699C3EE001A09CF /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E981801699C24B001A09CF /* ASIAuthenticationDialog.m */; };
 		E4E981991699C3EE001A09CF /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E981831699C24B001A09CF /* ASIDataCompressor.m */; };
 		E4E9819B1699C3EE001A09CF /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E981851699C24B001A09CF /* ASIDataDecompressor.m */; };
@@ -57,8 +57,8 @@
 		A98823AE16981D2100D6E3D5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A98823B016981D2800D6E3D5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A98823B216981D3400D6E3D5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		A98823B6169824F900D6E3D5 /* BusinessLogicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessLogicController.h; sourceTree = "<group>"; };
-		A98823B7169824F900D6E3D5 /* BusinessLogicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessLogicController.m; sourceTree = "<group>"; };
+		A9C82884169A841E008F761A /* DLEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLEngine.h; path = Engine/DLEngine.h; sourceTree = "<group>"; };
+		A9C82885169A841E008F761A /* DLEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DLEngine.m; path = Engine/DLEngine.m; sourceTree = "<group>"; };
 		E4E9817F1699C24B001A09CF /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = Frameworks/ASIHTTPRequest/Classes/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		E4E981801699C24B001A09CF /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = Frameworks/ASIHTTPRequest/Classes/ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		E4E981811699C24B001A09CF /* ASICacheDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = Frameworks/ASIHTTPRequest/Classes/ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 		A988236916981B9100D6E3D5 /* DigestTest */ = {
 			isa = PBXGroup;
 			children = (
+				A9C82883169A8390008F761A /* DigestLoginEngine */,
 				A98823B41698232600D6E3D5 /* ViewController */,
-				A98823B51698233700D6E3D5 /* BusinessLogicController */,
 				A988237216981B9100D6E3D5 /* AppDelegate.h */,
 				A988237316981B9100D6E3D5 /* AppDelegate.m */,
 				A988236A16981B9100D6E3D5 /* Supporting Files */,
@@ -178,13 +178,13 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		A98823B51698233700D6E3D5 /* BusinessLogicController */ = {
+		A9C82883169A8390008F761A /* DigestLoginEngine */ = {
 			isa = PBXGroup;
 			children = (
-				A98823B6169824F900D6E3D5 /* BusinessLogicController.h */,
-				A98823B7169824F900D6E3D5 /* BusinessLogicController.m */,
+				A9C82884169A841E008F761A /* DLEngine.h */,
+				A9C82885169A841E008F761A /* DLEngine.m */,
 			);
-			name = BusinessLogicController;
+			name = DigestLoginEngine;
 			sourceTree = "<group>";
 		};
 		E4E981941699C25C001A09CF /* ASIHTTPRequest */ = {
@@ -292,7 +292,7 @@
 				A988237416981B9100D6E3D5 /* AppDelegate.m in Sources */,
 				A988237D16981B9100D6E3D5 /* ViewController.m in Sources */,
 				A98823AB16981CA800D6E3D5 /* Reachability.m in Sources */,
-				A98823B8169824F900D6E3D5 /* BusinessLogicController.m in Sources */,
+				A9C82886169A841E008F761A /* DLEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +339,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -359,7 +359,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -7,26 +7,14 @@
 //
 
 #import "ViewController.h"
-#import "BusinessLogicController.h"
-
-@interface ViewController ()
-
-/*!
- @brief     业务逻辑层
- */
-@property (nonatomic, retain) BusinessLogicController *blController;
-
-@end
+#import "DLEngine.h"
 
 @implementation ViewController
 
 - (void)dealloc
 {
     [_loginURLTextField release];
-    [_userNameTextField release];
-    [_passWordTextField release];
     [_loginButton release];
-    [_blController release];
     [super dealloc];
 }
 
@@ -34,8 +22,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    self.blController = [BusinessLogicController blController];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,19 +37,11 @@
     [NSURL URLWithString:_loginURLTextField.text] :
     [NSURL URLWithString:@"http://digest.boxfishedu.com/auth"];
     
-    
-    if (_userNameTextField.text.length == 0 || _passWordTextField.text.length == 0)
-    {
-        [_blController digestLoginWithURL:url];
-    }
-    else
-    {
-        [_blController digestLoginWithURL:url userName:_userNameTextField.text passWord:_passWordTextField.text];
-    }
+    [[DLEngine engineWithDelegate:self] digestLoginWithURL:url];
 }
 - (IBAction)logout:(id)sender
 {
-    [_blController cleanCache];
+    [[DLEngine engine] clearSession];
     NSLog(@"注销成功");
 }
 @end
