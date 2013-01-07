@@ -16,5 +16,5 @@ profile
 *.moved-aside
 DerivedData
 .idea/
-
+DigestTest.xcodeproj/xcuserdata
 DigestTest.xcodeproj/project.xcworkspace/xcuserdata
