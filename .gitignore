@@ -16,3 +16,5 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+DigestTest.xcodeproj/project.xcworkspace/xcuserdata/yongjizhang.xcuserdatad/UserInterfaceState.xcuserstate

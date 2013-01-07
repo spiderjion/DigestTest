@@ -119,7 +119,8 @@ static DLEngine *engineSingleton = nil;
 // or cancel it ([request cancelAuthentication])
 - (void)authenticationNeededForRequest:(ASIHTTPRequest *)request
 {
-    if ([_delegate respondsToSelector:@selector(engineLoginPageView)])
+    if ([_delegate respondsToSelector:@selector(engineLoginPageView)] &&
+        ([_delegate isKindOfClass:[UIViewController class]] || [_delegate isKindOfClass:[UIView class]]))
     {
         UIView *view = [_delegate engineLoginPageView];
         
@@ -131,7 +132,6 @@ static DLEngine *engineSingleton = nil;
         {
             [((UIView *)_delegate) addSubview:view];
         }
-        //otherwise nothing will happend.
     }
     else
     {
